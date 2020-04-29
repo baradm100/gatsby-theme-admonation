@@ -14,17 +14,17 @@
 
 Out-of-the-box:
 
-- Fully responsive
-- Highly optimized (Lighthouse score ~400)
-- SEO optimized (with open graph, Twitter Card, JSON-LD, RSS and sitemap)
-- Syntax highlighting
-- Search functionality
-- Multi navigations
-- Static pages
-- Fully typed with TypeScript
-- Tagging
-- Theming
-- Customizable
+-   Fully responsive
+-   Highly optimized (Lighthouse score ~400)
+-   SEO optimized (with open graph, Twitter Card, JSON-LD, RSS and sitemap)
+-   Syntax highlighting
+-   Search functionality
+-   Multi navigations
+-   Static pages
+-   Fully typed with TypeScript
+-   Tagging
+-   Theming
+-   Customizable
 
 See [here](https://nehalem.netlify.com/features) for details!
 
@@ -32,7 +32,7 @@ See [here](https://nehalem.netlify.com/features) for details!
 
 > See [this repo](https://github.com/nehalist/gatsby-starter-nehalem) for a quick start!
 
-This is the mono repo containing the demo __and__ the theme. Check the [theme-specific README](theme/README.md) for further
+This is the mono repo containing the demo **and** the theme. Check the [theme-specific README](theme/README.md) for further
 details on the theme.
 
 In case you want to work with this mono repo (for local development, pull requests, etc.):
@@ -56,4 +56,4 @@ Happy to hear that! Feel free to star it on [GitHub](https://github.com/nehalist
 
 Developed by [nehalist.io](https://nehalist.io).
 
-*Big thanks to my SO for the awesome logo!*
+_Big thanks to my SO for the awesome logo!_
