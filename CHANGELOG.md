@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Local packing ability
 -   Code of conduct
 -   Contributing file
+-   Publish pipeline
 
 ### Changed
 
