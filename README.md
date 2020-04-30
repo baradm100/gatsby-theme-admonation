@@ -2,9 +2,11 @@
 
 ![Node CI](https://github.com/baradm100/gatsby-theme-admonation/workflows/Node%20CI/badge.svg?branch=master)
 
-> TODO: Create a demo
+**admonation** is a Gatsby (beautiful) theme for blogging.
 
-**admonation** is a Gatsby theme for blogging.
+![Demo](./imgs/demo.png)
+
+> TODO: Create a demo
 
 ## Features
 
