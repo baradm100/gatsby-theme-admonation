@@ -1,8 +1,6 @@
 # Admonation Gatsby Theme
 
-```
-![Build Status](https://github.com/nehalist/gatsby-theme-admoni/workflows/Node%20CI/badge.svg)
-```
+![Node CI](https://github.com/baradm100/gatsby-theme-admonation/workflows/Node%20CI/badge.svg?branch=master)
 
 > TODO: Create a demo
 
