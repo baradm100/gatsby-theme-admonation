@@ -201,6 +201,9 @@ module.exports = (themeOptions) => {
       {
         resolve: "gatsby-plugin-robots-txt",
       },
+      {
+        resolve: "gatsby-plugin-preload-link-crossorigin",
+      },
     ].filter(Boolean),
   }
 }

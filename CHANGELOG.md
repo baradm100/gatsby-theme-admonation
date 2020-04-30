@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+-   Improved the demo design
+-   Improve Lighthouse score due to preload link cross-origin
+
 ## [1.0.0]
 
 ### Added
