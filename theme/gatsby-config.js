@@ -7,8 +7,8 @@ module.exports = (themeOptions) => {
   const manifest = themeOptions.manifest
     ? themeOptions.manifest
     : {
-        name: `nehalem - A Gatsby theme`,
-        short_name: `nehalem`,
+        name: `admonation - A Gatsby theme`,
+        short_name: `admonation`,
         start_url: `/`,
         background_color: `#a4cbb8`,
         theme_color: `#a4cbb8`,
@@ -18,8 +18,8 @@ module.exports = (themeOptions) => {
 
   return {
     siteMetadata: {
-      title: `nehalem`,
-      siteUrl: `https://nehalem.netlify.com`,
+      title: `admonation`,
+      siteUrl: `https://nehalem.netlify.com`, // TODO: Rename
       description: `A Gatsby theme for %TOPICS%`,
       topics: [`bloggers`, `geeks`, `nerds`, `people`, `everyone`],
       menu: [
@@ -44,17 +44,17 @@ module.exports = (themeOptions) => {
       ],
       search: true,
       author: {
-        name: `nehalem`,
-        description: `I'm <strong>nehalem</strong>, a Gatsby theme by 
-        <a href="https://nehalist.io" rel="noopener" target="_blank">nehalist.io</a>. If you like what you see feel free to give a 
-        <a href="https://github.com/nehalist/gatsby-theme-nehalem" rel="noopener" target="_blank">star on GitHub!</a>`,
+        name: `baradm100`,
+        description: `I'm <strong>admonation</strong>, a Gatsby theme by 
+        <a href="https://github.com/baradm100" rel="noopener" target="_blank">Bar Admoni</a>. If you like what you see feel free to give a 
+        <a href="https://github.com/baradm100/gatsby-theme-admonation" rel="noopener" target="_blank">star on GitHub!</a>`,
         social: {
           facebook: ``,
-          twitter: `https://twitter.com/nehalist`,
-          linkedin: `https://www.linkedin.com/in/kevin-hirczy-7a9377106/`,
+          twitter: ``,
+          linkedin: `https://www.linkedin.com/in/bar-admoni/`,
           instagram: ``,
           youtube: ``,
-          github: `https://github.com/nehalist`,
+          github: `https://github.com/baradm100`,
           twitch: ``,
         },
       },

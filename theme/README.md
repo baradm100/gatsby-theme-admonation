@@ -51,8 +51,8 @@ To use this theme in your Gatsby sites, follow these instructions:
             contentPath: `content`,
             // the page manifest
             manifest: {
-              name: `nehalem - A Gatsby theme`,
-              short_name: `nehalem`,
+              name: `admonation - A Gatsby theme`,
+              short_name: `admonation`,
               start_url: `/`,
               background_color: `#a4cbb8`,
               theme_color: `#a4cbb8`,
