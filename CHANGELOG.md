@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   robot.txt to improve SEO
 -   Node 13.X as part of the CI
 -   Local packing ability
+-   Code of conduct
 
 ### Changed
 
