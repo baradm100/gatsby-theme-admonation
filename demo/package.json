@@ -10,10 +10,12 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "update:theme": "cd ../theme && npm run pack:local && cd ../demo && npm i --save ../theme/output.tgz",
+    "update:theme:clean": "npm uninstall @baradm100/gatsby-theme-admonation && npm run update:theme",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "@nehalist/gatsby-theme-nehalem": "file:../theme/nehalist-gatsby-theme-nehalem-1.0.8.tgz",
+    "@baradm100/gatsby-theme-admonation": "file:../theme/output.tgz",
     "gatsby": "^2.13.1",
     "react": "^16.8.6",
     "react-carbon": "^1.0.7",

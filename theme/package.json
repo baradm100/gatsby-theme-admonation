@@ -1,22 +1,23 @@
 {
-  "name": "@nehalist/gatsby-theme-nehalem",
+  "name": "@baradm100/gatsby-theme-admonation",
   "author": {
-    "name": "Kevin Hirczy",
-    "email": "kevin@nehalist.io",
-    "url": "https://nehalist.io"
+    "name": "Bar Admoni",
+    "email": "admoni.bar1@gmail.com",
+    "url": "https://github.com/baradm100"
   },
-  "version": "1.0.8",
+  "version": "1.0.0",
   "scripts": {
     "lint:ts": "tslint -c ../tslint.json 'theme/src/**/*.{ts,tsx}'",
     "lint:css": "stylelint --config ../.stylelintrc './src/**/*.{ts,tsx}'",
-    "lint": "npm run lint:ts && npm run lint:css"
+    "lint": "npm run lint:ts && npm run lint:css",
+    "pack:local": "rm -rf *.tgz && npm pack && mv *.tgz output.tgz"
   },
   "repository": {
     "type": "git",
-    "repository": "https://github.com/nehalist/gatsby-theme-nehalem"
+    "repository": "https://github.com/baradm100/gatsby-theme-admonation"
   },
   "bugs": {
-    "url": "https://github.com/nehalist/gatsby-theme-nehalem/issues"
+    "url": "https://github.com/baradm100/gatsby-theme-admonation/issues"
   },
   "main": "index.js",
   "license": "MIT",
