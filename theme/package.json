@@ -5,7 +5,7 @@
     "email": "admoni.bar1@gmail.com",
     "url": "https://github.com/baradm100"
   },
-  "version": "1.0.1",
+  "version": "1.0.0",
   "scripts": {
     "lint:ts": "tslint -c ../tslint.json 'theme/src/**/*.{ts,tsx}'",
     "lint:css": "stylelint --config ../.stylelintrc './src/**/*.{ts,tsx}'",
