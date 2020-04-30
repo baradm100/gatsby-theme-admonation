@@ -1,3 +1,3 @@
-# Nehalem Demo
+# Demo
 
 Hey there.

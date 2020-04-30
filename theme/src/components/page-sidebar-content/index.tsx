@@ -1,8 +1,9 @@
-import React, {FunctionComponent} from "react";
-import {graphql, useStaticQuery} from "gatsby";
-import {Card} from "../card";
-import styled from "styled-components";
-import Theme from "../../styles/theme";
+import React, { FunctionComponent } from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { Card } from "../card"
+import styled from "styled-components"
+import Theme from "../../styles/theme"
+import calculateReadTime from "../../utils/calculateReadTime"
 
 const LatestPosts = styled.div`
   display: grid;
@@ -17,7 +18,7 @@ const LatestPosts = styled.div`
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
   }
-`;
+`
 
 const PageSidebarContent: FunctionComponent = () => {
   const latestPosts = useStaticQuery(graphql`
@@ -30,6 +31,7 @@ const PageSidebarContent: FunctionComponent = () => {
         edges {
           node {
             id
+            html
             frontmatter {
               title
               path
@@ -49,8 +51,10 @@ const PageSidebarContent: FunctionComponent = () => {
         }
       }
     }
-  `);
-  const posts = latestPosts.posts.edges.map(node => node.node);
+  `)
+  const posts = latestPosts.posts.edges
+    .map((node) => node.node)
+    .map((p) => ({ ...p, readTime: calculateReadTime(p) }))
 
   return (
     <>
@@ -63,18 +67,20 @@ const PageSidebarContent: FunctionComponent = () => {
             path={post.frontmatter.path}
             key={index}
             compact={true}
-            meta={
-              {
-                time: post.frontmatter.created,
-                timePretty: post.frontmatter.createdPretty,
-                tag: post.frontmatter.tags.length > 0 ? post.frontmatter.tags[0] : null,
-              }
-            }
+            meta={{
+              time: post.frontmatter.created,
+              timePretty: post.frontmatter.createdPretty,
+              tag:
+                post.frontmatter.tags.length > 0
+                  ? post.frontmatter.tags[0]
+                  : null,
+              readTime: post.readTime,
+            }}
           />
         ))}
       </LatestPosts>
     </>
-  );
-};
+  )
+}
 
-export default PageSidebarContent;
+export default PageSidebarContent
