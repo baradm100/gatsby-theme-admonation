@@ -19,9 +19,8 @@ jobs:
                   cd theme
                   npm i
                   npm run lint
-                  npm pack
                   cd ../demo
-                  npm i
+                  npm run update:theme && npm i
                   npm run build
               env:
                   CI: true
