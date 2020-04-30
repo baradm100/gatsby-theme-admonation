@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+
 ### Added
 
 -   Read time calculation to each post
@@ -24,4 +26,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Updated the file structure
 -   Exported most of the interfaces
 
-[unreleased]: https://github.com/nehalist/gatsby-theme-nehalem/compare/master...baradm100:master
+[unreleased]: https://github.com/baradm100/gatsby-theme-admonation/compare/v1.0.0...HEAD
+[1.0.0]: hhttps://github.com/nehalist/gatsby-theme-nehalem/compare/master...baradm100:v1.0.0
