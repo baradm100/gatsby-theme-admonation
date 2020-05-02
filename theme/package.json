@@ -22,15 +22,15 @@
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "gatsby": "^2.13.1",
+    "gatsby": "^2.21.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "gatsby": "^2.13.1",
+    "gatsby": "^2.21.9",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "stylelint": "^10.1.0",
+    "stylelint": "^13.3.3",
     "stylelint-config-recommended": "^2.2.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.8.0",

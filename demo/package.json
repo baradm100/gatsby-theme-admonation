@@ -18,7 +18,6 @@
     "@baradm100/gatsby-theme-admonation": "file:../theme/output.tgz",
     "gatsby": "^2.13.1",
     "react": "^16.8.6",
-    "react-carbon": "^1.0.7",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
