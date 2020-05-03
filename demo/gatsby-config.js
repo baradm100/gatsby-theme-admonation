@@ -5,5 +5,5 @@
  */
 
 module.exports = {
-  plugins: [`@baradm100/gatsby-theme-admonation`],
-}
+    plugins: [`@baradm100/gatsby-theme-admonation`],
+};

@@ -1,10 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
 interface LogoProps {
-  title: string;
+    title: string;
 }
 
 const Logo: FunctionComponent<LogoProps> = ({ title }) => {
-  return null;
+    return null;
 };
 export default Logo;

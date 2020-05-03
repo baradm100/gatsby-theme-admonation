@@ -1,6 +1,6 @@
-import { CSSProperties } from "react"
+import { CSSProperties } from 'react';
 
 export interface AvatarProps {
-  alt: string
-  style?: CSSProperties
+    alt: string;
+    style?: CSSProperties;
 }
