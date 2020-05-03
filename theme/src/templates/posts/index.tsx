@@ -18,6 +18,7 @@ const PostsPage: FunctionComponent<PostsPageProps> = ({
   pathContext,
   location,
 }) => {
+  const showFeaturedTags = pathContext.showFeaturedTags
   const posts = pathContext.posts
     .slice(0, pathContext.postsPerPage)
     .map((p) => ({ ...p, readTime: calculateReadTime(p) }))
@@ -59,7 +60,7 @@ const PostsPage: FunctionComponent<PostsPageProps> = ({
           <SidebarContent />
         </Sidebar>
       </HomeContainer>
-      <TagList />
+      {showFeaturedTags && <TagList />}
     </Layout>
   )
 }

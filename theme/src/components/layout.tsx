@@ -1,17 +1,20 @@
-import React, {FunctionComponent, ReactNode} from "react";
-import GlobalStyle from "../styles/global-style";
-import {graphql, useStaticQuery} from "gatsby";
-import Header from "./header";
-import {SiteMetadata} from "../utils/models";
-import Navigation from "./navigation";
-import Footer from "./footer";
+import React, { FunctionComponent, ReactNode } from "react"
+import GlobalStyle from "../styles/global-style"
+import { graphql, useStaticQuery } from "gatsby"
+import Header from "./header"
+import { SiteMetadata } from "../utils/models"
+import Navigation from "./navigation"
+import Footer from "./footer"
 
 interface LayoutProps {
-  children: ReactNode;
-  bigHeader?: boolean;
+  children: ReactNode
+  bigHeader?: boolean
 }
 
-const Layout: FunctionComponent<LayoutProps> = ({children, bigHeader = true}) => {
+const Layout: FunctionComponent<LayoutProps> = ({
+  children,
+  bigHeader = true,
+}) => {
   const data = useStaticQuery<SiteMetadata>(graphql`
     query {
       site {
@@ -31,7 +34,7 @@ const Layout: FunctionComponent<LayoutProps> = ({children, bigHeader = true}) =>
         }
       }
     }
-  `);
+  `)
 
   return (
     <>
@@ -52,12 +55,13 @@ const Layout: FunctionComponent<LayoutProps> = ({children, bigHeader = true}) =>
           dark={true}
         />
       )}
-      <main>
-        {children}
-      </main>
-      <Footer menu={data.site.siteMetadata.footerMenu} owner={data.site.siteMetadata.title}/>
+      <main>{children}</main>
+      <Footer
+        menu={data.site.siteMetadata.footerMenu}
+        owner={data.site.siteMetadata.title}
+      />
     </>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

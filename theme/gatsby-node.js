@@ -22,6 +22,11 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const result = await graphql(`
     query {
+      site {
+        siteMetadata {
+          showFeaturedTags
+        }
+      }
       pages: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/(/pages/).*.(md)/" } }
       ) {
@@ -87,6 +92,9 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const tags = []
   const posts = result.data.posts.edges.map((node) => node.node)
   const pages = result.data.pages.edges.map((node) => node.node)
+  const showFeaturedTags = Boolean(
+    result.data.site.siteMetadata.showFeaturedTags
+  )
   const availableTags =
     result.data.tags.edges.map((node) => node.node).map((t) => t.name) || []
 
@@ -140,6 +148,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     context: {
       posts,
       postsPerPage,
+      showFeaturedTags,
     },
   })
 }

@@ -13,7 +13,7 @@ module.exports = (themeOptions) => {
         background_color: `#a4cbb8`,
         theme_color: `#a4cbb8`,
         display: `minimal-ui`,
-        icon: `${__dirname}/assets/nehalist-gatsby.png`,
+        icon: `${__dirname}/assets/logo.png`,
       }
 
   return {
@@ -43,6 +43,7 @@ module.exports = (themeOptions) => {
         },
       ],
       search: true,
+      showFeaturedTags: true,
       author: {
         name: `baradm100`,
         description: `I'm <strong>admonation</strong>, a Gatsby theme by 
