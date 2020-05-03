@@ -17,7 +17,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({ alt, style }) => {
         query {
             file(
                 sourceInstanceName: { eq: "themeAssets" }
-                name: { eq: "nehalist-gatsby" }
+                name: { eq: "logo" }
             ) {
                 childImageSharp {
                     fixed(width: 55, height: 55) {
