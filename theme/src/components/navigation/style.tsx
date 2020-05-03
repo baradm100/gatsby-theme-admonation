@@ -1,11 +1,13 @@
-import styled from "styled-components";
-import {Container} from "../common";
-import Theme from "../../styles/theme";
-import {Link} from "gatsby";
+import styled from 'styled-components';
+import { Container } from '../common';
+import Theme from '../../styles/theme';
+import { Link } from 'gatsby';
 
-export const NavContainer = styled.div<{ dark?: boolean}>`
-  z-index: 1000;
-  ${props => props.dark && `
+export const NavContainer = styled.div<{ dark?: boolean }>`
+    z-index: 1000;
+    ${(props) =>
+        props.dark &&
+        `
     background-color: #20232a;
     position: sticky;
     top: 0;
@@ -14,29 +16,31 @@ export const NavContainer = styled.div<{ dark?: boolean}>`
 `;
 
 export const Nav = styled(Container)`
-  display: flex;
-  position: relative;
+    display: flex;
+    position: relative;
 `;
 
 export const NavWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 70px;
-  white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    white-space: nowrap;
 
-  @media (max-width: ${Theme.breakpoints.sm}) {
-    width: 90%;
-  }
+    @media (max-width: ${Theme.breakpoints.sm}) {
+        width: 90%;
+    }
 `;
 
 export const NavMenu = styled.ul<{ mobile?: boolean }>`
-  align-self: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    align-self: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 
-  ${props => props.mobile && `
+    ${(props) =>
+        props.mobile &&
+        `
     @media (max-width: ${Theme.breakpoints.sm}) {
       width: 80%;
       overflow-x: auto;
@@ -47,40 +51,40 @@ export const NavMenu = styled.ul<{ mobile?: boolean }>`
 `;
 
 export const NavMenuItem = styled.li`
-  cursor: pointer;
-  display: inline-block;
-  border: 0;
-  background: transparent;
-  outline: none;
-  text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    background: transparent;
+    outline: none;
+    text-decoration: none;
 `;
 
 export const NavLink = styled(Link)`
-  color: #fff;
-  opacity: .8;
-  padding: 16px;
-  transition: opacity .5s;
+    color: #fff;
+    opacity: 0.8;
+    padding: 16px;
+    transition: opacity 0.5s;
 
-  &:hover {
-    opacity: 1;
-  }
+    &:hover {
+        opacity: 1;
+    }
 `;
 
 export const SearchContainer = styled.div`
-  align-self: center;
-  position: relative;
+    align-self: center;
+    position: relative;
 `;
 
 export const ToggleSearchButton = styled.button`
-  cursor: pointer;
-  color: #fff;
-  opacity: .8;
-  background: none;
-  outline: none;
-  border: 0;
-  transition: opacity .5s;
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.8;
+    background: none;
+    outline: none;
+    border: 0;
+    transition: opacity 0.5s;
 
-  &:hover {
-    opacity: 1;
-  }
+    &:hover {
+        opacity: 1;
+    }
 `;
