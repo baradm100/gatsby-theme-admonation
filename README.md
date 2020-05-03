@@ -47,6 +47,138 @@ npm install
 
 TODO
 
+### Site Metadata
+
+See the full site metadata [here](./theme/gatsby-config.js#19)
+
+#### title
+
+The site's title (will be shown in the title and in the SEO)
+
+**Default value**: `admonation`
+
+#### siteUrl
+
+The site's url (will be shown in SEO)
+
+**Default value**: `https://nehalem.netlify.com`
+
+#### description
+
+The site's description (will be shown in SEO and in the header)
+
+**Default value**: `A Gatsby theme for %TOPICS%`
+
+**Notes**:
+
+-   The `%TOPICS%` will be replaced in with the site's topics
+
+#### topics
+
+The site's topics (will be shown in SEO and in the header with fancy typing animation)
+
+**Default value**:
+
+```javascript
+[`bloggers`, `geeks`, `nerds`, `people`, `everyone`];
+```
+
+#### menu
+
+The items that will be shown in the upper navigation menu
+
+**Default value**:
+
+```javascript
+[
+    {
+        name: 'Home',
+        path: '/',
+    },
+    {
+        name: 'Example',
+        path: '/page',
+    },
+];
+```
+
+#### footerMenu
+
+The items that will be shown in the footer menu
+
+**Default value**:
+
+```javascript
+[
+    {
+        name: 'RSS',
+        path: '/rss.xml',
+    },
+    {
+        name: 'Sitemap',
+        path: '/sitemap.xml',
+    },
+];
+```
+
+#### search
+
+If need to show the search feature
+
+**Default value**: `true`
+
+#### showFeaturedTags
+
+If need to show the featured tags
+
+**Default value**: `true`
+
+#### author
+
+The author details
+
+**Default value**:
+
+```javascript
+{
+    name: `baradm100`,
+    description: `I'm <strong>admonation</strong>, a Gatsby theme by
+    <a href="https://github.com/baradm100" rel="noopener" target="_blank">Bar Admoni</a>. If you like what you see feel free to give a
+    <a href="https://github.com/baradm100/gatsby-theme-admonation" rel="noopener" target="_blank">star on GitHub!</a>`,
+    social: {
+        facebook: ``,
+        twitter: ``,
+        linkedin: `https://www.linkedin.com/in/bar-admoni/`,
+        instagram: ``,
+        youtube: ``,
+        github: `https://github.com/baradm100`,
+        twitch: ``,
+    }
+}
+```
+
+### Plugin Options
+
+See the full plugin options [here](./theme/gatsby-config.js#9)
+
+#### manifest
+
+Information for the manifest file (the manifest plugin [document](https://github.com/gatsbyjs/gatsby/tree/HEAD/packages/gatsby-plugin-manifest#how-to-use))
+
+**Default value**:
+
+```javascript
+{
+    name: `admonation - A Gatsby theme`,
+    short_name: `admonation`,
+    start_url: `/`,
+    background_color: `#a4cbb8`,
+    theme_color: `#a4cbb8`,
+    display: `minimal-ui`,
+    icon: `${__dirname}/assets/logo.png`,
+}
+```
+
 ## Author
 
 Developed by [nehalist.io](https://nehalist.io) and modified by [Bar Admoni](https://github.com/baradm100).

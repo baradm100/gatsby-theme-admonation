@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 -   Cache dependencies in the CI
+-   Config option to control showing the featured tags
 
 ### Changed
 

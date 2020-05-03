@@ -1,20 +1,32 @@
-import React, {FunctionComponent} from "react";
-import StyledNavigation from "../navigation";
-import {Description, StyledHeader, StyledTopics, Title, TitleWrapper} from "./style";
-import reactStringReplace from 'react-string-replace';
-import {MenuItem} from "../../utils/models";
+import React, { FunctionComponent } from "react"
+import StyledNavigation from "../navigation"
+import {
+  Description,
+  StyledHeader,
+  StyledTopics,
+  Title,
+  TitleWrapper,
+} from "./style"
+import reactStringReplace from "react-string-replace"
+import { MenuItem } from "../../utils/models"
 
 interface HeaderProps {
-  title: string;
-  description: string;
-  topics: string[];
-  menu: MenuItem[];
-  search: boolean;
+  title: string
+  description: string
+  topics: string[]
+  menu: MenuItem[]
+  search: boolean
 }
 
-const Header: FunctionComponent<HeaderProps> = ({title, description, menu, topics = [], search = true}) => {
+const Header: FunctionComponent<HeaderProps> = ({
+  title,
+  description,
+  menu,
+  topics = [],
+  search = true,
+}) => {
   if (topics.length > 0) {
-    description = reactStringReplace(description, '%TOPICS%', (match, i) => {
+    description = reactStringReplace(description, "%TOPICS%", (match, i) => {
       return (
         <StyledTopics
           strings={topics}
@@ -25,21 +37,19 @@ const Header: FunctionComponent<HeaderProps> = ({title, description, menu, topic
           loop={true}
           key={match + i}
         />
-      );
-    }) as any;
+      )
+    }) as any
   }
 
   return (
     <StyledHeader>
-      <StyledNavigation title={title} menu={menu} showSearch={search}/>
+      <StyledNavigation title={title} menu={menu} showSearch={search} />
       <TitleWrapper>
         <Title>{title}</Title>
-        <Description>
-          {description}
-        </Description>
+        <Description>{description}</Description>
       </TitleWrapper>
     </StyledHeader>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

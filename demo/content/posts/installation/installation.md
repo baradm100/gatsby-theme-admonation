@@ -37,7 +37,7 @@ module.exports = {
           background_color: `#a4cbb8`,
           theme_color: `#a4cbb8`,
           display: `minimal-ui`,
-          icon: `${__dirname}/assets/nehalist-gatsby.png`,
+          icon: `${__dirname}/assets/logo.png`,
         },
         // if archive pages should be generated automatically
         loadDefaultPages: true,
@@ -53,6 +53,7 @@ _Note: In a future release theme options will cover most configurations of the `
 
 3. Nehalem in its default configuration requires a certain structure of your content. This is especially important to consider
    when using a starter which already ships with a specific content structure - so just follow these rules:
+
    1. Be sure to have a `content` directory within your Gatsby installation
    2. Be sure to have a `tags.yml` file within the `content` directory with _at least_ one tag, e.g.
 

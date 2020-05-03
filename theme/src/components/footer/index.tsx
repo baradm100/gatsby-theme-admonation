@@ -44,14 +44,6 @@ const Footer: FunctionComponent<FooterProps> = ({ menu, owner }) => (
           <a href={`https://nehalist.io`} target={`_blank`} rel={`noopener`}>
             Bar Admoni
           </a>
-          , fork from{" "}
-          <a
-            href={`https://github.com/baradm100`}
-            target={`_blank`}
-            rel={`noopener`}
-          >
-            nehalist.io
-          </a>
         </DesignBy>
       </div>
     </FooterContainer>
