@@ -97,8 +97,12 @@ The items that will be shown in the upper navigation menu
         path: '/',
     },
     {
-        name: 'Example',
-        path: '/page',
+        name: 'Archive',
+        path: '/archive',
+    },
+    {
+        name: 'Tags',
+        path: '/tags',
     },
 ];
 ```
