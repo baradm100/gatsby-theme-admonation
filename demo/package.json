@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@baradm100/gatsby-theme-admonation": "file:../theme/output.tgz",
-        "gatsby": "^2.13.1",
+        "gatsby": "^2.21.13",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
     },
