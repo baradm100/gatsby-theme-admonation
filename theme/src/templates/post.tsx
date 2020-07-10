@@ -354,7 +354,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = ({
                     </BioWrapper>
                 </PostAdditionContent>
             </PostAddition>
-            <Comments />
+            <Comments id={post.id} />
         </Layout>
     );
 };
@@ -364,6 +364,7 @@ export default PostTemplate;
 export const query = graphql`
     query PrimaryTag($postId: String!, $primaryTag: String!) {
         post: markdownRemark(id: { eq: $postId }) {
+            id
             headings {
                 depth
             }
