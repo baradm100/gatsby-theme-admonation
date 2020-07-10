@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Cache dependencies in the CI
 -   Config option to control showing the featured tags
+-   Unique post id to comments
 
 ### Changed
 
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Improve Lighthouse score due to preload link cross-origin
 -   Changed prettier to be cross project
 -   Default logo
+-   Updated OpenGraph name to property
 
 ### Security
 
