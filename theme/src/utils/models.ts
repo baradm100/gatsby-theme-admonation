@@ -41,6 +41,7 @@ export interface MenuItem {
 }
 
 export interface Post {
+    id: string;
     frontmatter: {
         title: string;
         path: string;
