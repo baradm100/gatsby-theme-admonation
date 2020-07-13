@@ -15,7 +15,7 @@ jobs:
                   registry-url: https://registry.npmjs.com/
             - name: 'Install & publish'
               run: |
-                apt-get install -y jq
+                sudo apt-get install -y jq
                 ./scripts/1-validated-params.sh && ./scripts/2-init.sh && ./scripts/3-bump-version.sh && ./scripts/4-update-changelog.sh && ./scripts/5-push-new-version.sh
               env:
                   NPM_TOKEN: ${{secrets.NPM_TOKEN}}
