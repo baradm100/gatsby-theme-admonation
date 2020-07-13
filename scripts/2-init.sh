@@ -12,4 +12,4 @@ npm install
 
 echo "Setting git config"
 git config --global user.name "Bar Admoni"
-git config --global user.email "admoni.bar1@gmail.com"
+git config --global user.email "badmoni@cisco.com"
