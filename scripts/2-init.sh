@@ -11,5 +11,5 @@ cd ..
 npm install
 
 echo "Setting git config"
-git config --global user.name "github-actions[bot]"
-git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+git config --global user.name "Bar Admoni"
+git config --global user.email "bar6020677@gmail.com"
