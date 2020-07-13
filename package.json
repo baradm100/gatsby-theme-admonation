@@ -1,7 +1,22 @@
 {
-    "private": true,
-    "workspaces": [
-        "theme",
-        "demo"
-    ]
+    "name": "gatsby-theme-admonation",
+    "version": "1.0.0",
+    "description": "a Gatsby (beautiful) theme for blogging",
+    "scripts": {
+        "prettier:changelog": "prettier --write CHANGELOG.md"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/baradm100/gatsby-theme-admonation.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/baradm100/gatsby-theme-admonation/issues"
+    },
+    "homepage": "https://github.com/baradm100/gatsby-theme-admonation#readme",
+    "devDependencies": {
+        "prettier": "^2.0.5"
+    }
 }
