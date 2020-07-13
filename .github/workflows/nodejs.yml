@@ -5,34 +5,16 @@ on: [push]
 jobs:
     build:
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version: [10.x, 12.x, 14.x]
         steps:
             - uses: actions/checkout@v1
-            - name: Cache node modules
-              uses: actions/cache@v1
-              env:
-                  cache-name: cache-node-modules
+            - uses: actions/setup-node@v1
               with:
-                  path: ~/.npm
-                  key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-build-${{ env.cache-name }}-${{ matrix.node-version }}-
-                      ${{ runner.os }}-build-${{ env.cache-name }}-
-                      ${{ runner.os }}-build-
-                      ${{ runner.os }}-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - name: install, lint, build
+                  node-version: 14
+                  registry-url: https://registry.npmjs.com/
+            - name: 'Install & publish'
               run: |
-                  cd theme
-                  npm i
-                  npm run lint
-                  cd ../demo
-                  npm run update:theme && npm i
-                  npm run build
+                sudo apt-get install -y jq
+                ./scripts/1-validated-params.sh && ./scripts/2-init.sh && ./scripts/3-bump-version.sh && ./scripts/4-update-changelog.sh && ./scripts/5-push-new-version.sh
               env:
-                  CI: true
+                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
