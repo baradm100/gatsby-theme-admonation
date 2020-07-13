@@ -3,7 +3,7 @@ set -e
 set -o pipefail
 
 test_branch="refs/tags/v1.0.1"
-branch_name=${test_branch##*/}
+branch_name=${GITHUB_REF##*/}
 export tag_name="${branch_name//v}"
 
 echo "Detected the new version: $tag_name"
