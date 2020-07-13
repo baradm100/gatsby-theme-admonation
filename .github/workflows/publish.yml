@@ -14,7 +14,7 @@ jobs:
                   node-version: 14
                   registry-url: https://registry.npmjs.com/
                   persist-credentials: false
-            - name: 'Install & publish'
+            - name: 'Preform Publish'
               run: |
                 ./scripts/1-validated-params.sh && ./scripts/2-init.sh && ./scripts/3-bump-version.sh && ./scripts/4-update-changelog.sh && ./scripts/5-push-new-version.sh
               env:

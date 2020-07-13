@@ -14,4 +14,4 @@ git push "$remote_repo" HEAD:master
 
 echo "Publishing the package..."
 cd theme
-# npm publish --access public
+npm publish --access public
