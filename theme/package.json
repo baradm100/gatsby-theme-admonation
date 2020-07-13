@@ -10,7 +10,8 @@
         "lint:ts": "tslint -c ../tslint.json 'theme/src/**/*.{ts,tsx}'",
         "lint:css": "stylelint --config ../.stylelintrc './src/**/*.{ts,tsx}'",
         "lint": "npm run lint:ts && npm run lint:css",
-        "pack:local": "rm -rf *.tgz && npm pack && mv *.tgz output.tgz"
+        "pack:local": "rm -rf *.tgz && npm pack && mv *.tgz output.tgz",
+        "prettier:package": "prettier --write package.json"
     },
     "repository": {
         "type": "git",
@@ -28,6 +29,7 @@
     },
     "devDependencies": {
         "gatsby": "^2.21.21",
+        "prettier": "^2.0.5",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "stylelint": "^13.3.3",

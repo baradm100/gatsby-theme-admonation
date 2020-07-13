@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 -   Config option to control showing the featured tags
 -   Unique post id to comments
 -   Support Node 14.x
+-   Auto version increment in the CD based on the tag
 
 ### Changed
 
