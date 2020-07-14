@@ -1,49 +1,126 @@
 const fs = require('fs');
-const UNRELEASED_TITLE = '## [Unreleased]';
-const UNRELEASED_LINK_PREFIX =
-    '[unreleased]: https://github.com/baradm100/gatsby-theme-admonation/compare/v';
+
 const NEW_VERSION = process.argv[2];
+const GITHUB_SERVER_URL = process.argv[3];
+const GITHUB_REPOSITORY = process.argv[4];
+const REPO_URL = `${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}`;
+const CHANGELOG_FILE_PATH = './CHANGELOG.md';
+const UNRELEASED_TITLE = '## [Unreleased]';
+const UNRELEASED_LINK_PREFIX = `[unreleased]: ${REPO_URL}/compare/v`;
 
-function findRow(splitLines, textToFind) {
-    return splitLines.findIndex((r) => r == textToFind);
-}
+class Changelog {
+    constructor(content) {
+        this.splittedContent = content.split('\n');
+        this.unreleasedTitleRowIndex = null;
+    }
 
-function replaceUnreleasedHeader(fileContent, newHeaderText) {
-    return fileContent.replace(UNRELEASED_TITLE, `## [${newHeaderText}]`);
-}
+    get content() {
+        return this.splittedContent.join('\n');
+    }
 
-function getLastVersion(splitLines) {
-    return splitLines
-        .find((r) => r.startsWith(UNRELEASED_LINK_PREFIX))
-        .replace(UNRELEASED_LINK_PREFIX, '')
-        .replace('...HEAD', '');
-}
+    getLastVersion() {
+        return this.splittedContent
+            .find((r) => r.startsWith(UNRELEASED_LINK_PREFIX))
+            .replace(UNRELEASED_LINK_PREFIX, '')
+            .replace('...HEAD', '');
+    }
 
-function main() {
-    const changelogFileContent = fs.readFileSync('./CHANGELOG.md').toString();
-    const changelogSplitLine = changelogFileContent.split('\n');
-    const unreleasedHeaderIndex = findRow(changelogSplitLine, UNRELEASED_TITLE);
-    const lastTag = getLastVersion(changelogSplitLine);
-    let updatedContent = replaceUnreleasedHeader(
-        changelogFileContent,
-        NEW_VERSION
-    );
+    getUnreleasedTitleRowIndex() {
+        if (this.unreleasedTitleRowIndex) {
+            return this.unreleasedTitleRowIndex;
+        }
 
-    updatedContent = updatedContent.split('\n');
-    updatedContent.splice(unreleasedHeaderIndex, 0, `${UNRELEASED_TITLE}\n\n`);
-    updatedContent.pop();
-    updatedContent.push(
-        `[${NEW_VERSION}]: https://github.com/baradm100/gatsby-theme-admonation/compare/v${lastTag}...v${NEW_VERSION}`
-    );
-    updatedContent.push('');
-    updatedContent = updatedContent
-        .join('\n')
-        .replace(
-            `[unreleased]: https://github.com/baradm100/gatsby-theme-admonation/compare/v${lastTag}...HEAD`,
-            `[unreleased]: https://github.com/baradm100/gatsby-theme-admonation/compare/v${NEW_VERSION}...HEAD`
+        this.unreleasedTitleRowIndex = this.splittedContent.findIndex(
+            (r) => r === UNRELEASED_TITLE
+        );
+        return this.unreleasedTitleRowIndex;
+    }
+
+    withReplaceUnreleasedTitle(newHeaderText) {
+        this.splittedContent[
+            this.getUnreleasedTitleRowIndex()
+        ] = `## [${newHeaderText}]`;
+
+        return this;
+    }
+
+    withAddUnreleasedTitle() {
+        this.splittedContent.splice(
+            this.getUnreleasedTitleRowIndex(),
+            0,
+            `${UNRELEASED_TITLE}\n\n`
         );
 
-    fs.writeFileSync('./CHANGELOG.md', updatedContent);
+        return this;
+    }
+
+    withRemoveLastRow() {
+        this.splittedContent.pop();
+
+        return this;
+    }
+
+    withAddNewVersionCompereLink(lastVersion, newVersion) {
+        this.splittedContent.push(
+            `[${newVersion}]: ${REPO_URL}/compare/v${lastVersion}...v${newVersion}`
+        );
+
+        return this;
+    }
+
+    withUpdateUnreleasedCompereLink(lastVersion, newVersion) {
+        const unreleasedCompereLinkIndex = this.splittedContent.findIndex(
+            (r) =>
+                r === `[unreleased]: ${REPO_URL}/compare/v${lastVersion}...HEAD`
+        );
+        this.splittedContent[
+            unreleasedCompereLinkIndex
+        ] = `[unreleased]: ${REPO_URL}/compare/v${newVersion}...HEAD`;
+
+        return this;
+    }
 }
 
-main();
+function validateArgs() {
+    let validationPassed = true;
+    const paramsMessage =
+        'Please follow the following params:\n\nnode scripts/helper/changelogUpdater.js <NEW_VERSION> <GITHUB_SERVER_URL> <GITHUB_REPOSITORY>';
+    if (!NEW_VERSION) {
+        console.log('* Missing new version arg.');
+        validationPassed = false;
+    }
+    if (!GITHUB_SERVER_URL) {
+        console.log('* Missing GitHub server URL arg.');
+        validationPassed = false;
+    }
+    if (!GITHUB_REPOSITORY) {
+        console.log('* Missing GitHub repository name arg.');
+        validationPassed = false;
+    }
+
+    if (!validationPassed) {
+        console.log(paramsMessage);
+        process.exit(1);
+    }
+}
+
+function main(newVersion) {
+    const changelogFileContent = fs
+        .readFileSync(CHANGELOG_FILE_PATH)
+        .toString();
+
+    let newChangelog = new Changelog(changelogFileContent);
+    const lastVersion = newChangelog.getLastVersion();
+
+    newChangelog = newChangelog
+        .withReplaceUnreleasedTitle(newVersion)
+        .withAddUnreleasedTitle()
+        .withRemoveLastRow()
+        .withAddNewVersionCompereLink(lastVersion, newVersion)
+        .withUpdateUnreleasedCompereLink(lastVersion, newVersion);
+
+    fs.writeFileSync(CHANGELOG_FILE_PATH, newChangelog.content);
+}
+
+validateArgs();
+main(NEW_VERSION);
