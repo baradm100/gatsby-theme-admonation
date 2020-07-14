@@ -1,7 +1,7 @@
-#!/bin/bash 
+#!/bin/bash
 set -e
 set -o pipefail
-declare -a mandatory_env_vars=("NPM_TOKEN" "NODE_AUTH_TOKEN" "GITHUB_REF" "SECRET_GITHUB_TOKEN" "GITHUB_ACTOR" "GITHUB_REPOSITORY")
+declare -a mandatory_env_vars=("NPM_TOKEN" "NODE_AUTH_TOKEN" "GITHUB_REF" "SECRET_GITHUB_TOKEN" "GITHUB_ACTOR" "GITHUB_REPOSITORY" "GITHUB_SERVER_URL" "GITHUB_REPOSITORY")
 
 echo "Validating params..."
 
