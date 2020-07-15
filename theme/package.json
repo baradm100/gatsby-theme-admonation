@@ -1,5 +1,6 @@
 {
     "name": "@baradm100/gatsby-theme-admonation",
+    "description": "A beautiful Gatsby theme for blogging",
     "author": {
         "name": "Bar Admoni",
         "email": "admoni.bar1@gmail.com",
@@ -15,11 +16,13 @@
     },
     "repository": {
         "type": "git",
-        "repository": "https://github.com/baradm100/gatsby-theme-admonation"
+        "directory": "theme",
+        "url": "https://github.com/baradm100/gatsby-theme-admonation.git"
     },
     "bugs": {
         "url": "https://github.com/baradm100/gatsby-theme-admonation/issues"
     },
+    "homepage": "https://github.com/baradm100/gatsby-theme-admonation#readme",
     "main": "index.js",
     "license": "MIT",
     "peerDependencies": {
