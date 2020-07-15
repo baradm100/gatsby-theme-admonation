@@ -3,7 +3,7 @@
 ![Node CI](https://github.com/baradm100/gatsby-theme-admonation/workflows/Node%20CI/badge.svg?branch=master)
 ![Publish](https://github.com/baradm100/gatsby-theme-admonation/workflows/Publish/badge.svg)
 
-**admonation** is a Gatsby (beautiful) theme for blogging.
+**admonation** is a beautiful Gatsby theme for blogging.
 
 ![Demo](./imgs/demo.png)
 

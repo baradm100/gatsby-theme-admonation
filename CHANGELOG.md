@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Improving `changelogUpdater.js` code quality
 
+### Added
+
+-   More details for NPM registry
+
 ## [1.0.1]
 
 ### Added
