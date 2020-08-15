@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   More details for NPM registry
 
+### Security
+
+-   Updated 3rd party packages to resolve vulnerabilities
+
 ## [1.0.1]
 
 ### Added
